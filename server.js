@@ -29,8 +29,6 @@ app.use('/', urlRoutes);
 
 // MongoDB Connection
 mongoose.connect(`mongodb+srv://${username}:${password}@myatlasclusteredu.tkmvwoe.mongodb.net/qviq_db?retryWrites=true&w=majority&appName=myAtlasClusterEDU`)
-// mongoose.connect('mongodb://127.0.0.1:27017/HOMdb', { useNewUrlParser: true, useUnifiedTopology: true })
-// mongoose.connect(process.env.MONGO_URI, { useNewUrlParser: true, useUnifiedTopology: true }\
   .then(() => console.log('Connected to MongoDB'))
   .catch(err => console.error('MongoDB connection error:', err));
 
