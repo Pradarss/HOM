@@ -1,7 +1,6 @@
 const Url = require('./url.model');
 const crypto = require('crypto');
 
-// Shorten URL
 exports.shortenUrl = async (req, res) => {
   const { originalUrl } = req.body;
   if (!originalUrl) return res.status(400).json({ error: 'Original URL is required' });
@@ -17,7 +16,6 @@ exports.shortenUrl = async (req, res) => {
   }
 };
 
-// Redirect to Original URL
 exports.redirectUrl = async (req, res) => {
   const { shortId } = req.params;
 
@@ -35,7 +33,6 @@ exports.redirectUrl = async (req, res) => {
   }
 };
 
-// Get URL Stats
 exports.getUrlStats = async (req, res) => {
   const { shortId } = req.params;
 

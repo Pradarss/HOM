@@ -13,26 +13,21 @@ const PORT = process.env.PORT || 5000;
 const username = encodeURIComponent(process.env.USER);
 const password = encodeURIComponent(process.env.PASSWORD);
 
-// Middleware
 app.use(bodyParser.json());
 
-// Rate Limiting
 const limiter = rateLimit({
-  windowMs: 1 * 60 * 1000, // 1 minute
-  max: 100, // Max requests
+  windowMs: 1 * 60 * 1000, 
+  max: 100, 
   message: 'Too many requests, please try again later.',
 });
 app.use(limiter);
 
-// Routes
 app.use('/', urlRoutes);
 
-// MongoDB Connection
 mongoose.connect(`mongodb+srv://${username}:${password}@myatlasclusteredu.tkmvwoe.mongodb.net/qviq_db?retryWrites=true&w=majority&appName=myAtlasClusterEDU`)
   .then(() => console.log('Connected to MongoDB'))
   .catch(err => console.error('MongoDB connection error:', err));
 
-// Start Server
 app.listen(PORT, () => {
   console.log(`Server running on http://localhost:${PORT}`);
 });
