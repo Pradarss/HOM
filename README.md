@@ -27,4 +27,5 @@ A simple URL shortener service built with Node.js, Express, and MongoDB.
 4. Start the server: `npm start`.
 
 ## **Deployment**
-Deployed on render at https://hom-2qm4.onrender.com
+https://github.com/Pradarss/HOM
+Deployed on render at https://hom-2qm4.onrender.com 
